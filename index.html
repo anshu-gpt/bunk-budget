@@ -7,132 +7,153 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Bunk Budget">
-<meta name="theme-color" content="#FF4D82">
+<meta name="theme-color" content="#0A0710">
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEYElEQVR4nO3bS1YbSRCG0RSnt+fekRm4d2QWSI/gAHpVVb4io+5dAKrBp9+BhC8liPdff95nPwN1Lm+vl+nPMOuFBZzfjMCHvqCIz2tU3N1fRMT81DPubj9YyDzTI+zmP1DI7NUy7JdWP6gUMXNMy26avDOETCu1a1290GKmpdqeqoIWMz3UdHVo3oXMKHtPkN0LLWZG2tvbrqDFzAx7utsctJiZaWt/TT+Hhtk2BW2diWBLh0+DFjORPOvxYdBiJqJHXbqhSeVu0NaZyO71eTNoMbOCW506OUjlKmjrzEp+9mqhSeVb0NaZFX3t1kKTiqBJ5TNo5wYr++jXQpOKoEnlUopzI5S/v0v597/ZT7EsC00qgo7k7+/ZT7A8QZPKi/s5COvchIUmFUFH8HWdfcJRRdCkIujZ3M5NCZpUBD2TdW5O0KQi6FmscxeCJhVBz2CduxE0qQh6NOvclaAj8bV3NUGPZJ27EzSpCHoU6zyEoElF0CNY52EETSqC7s06DyVoUhF0T9Z5OEGTiqB72bvOvvZuQtCkIuge3M7TCJpUBN2adZ5K0KQi6Jas83SCJhVBt2KdQxA0qQi6BeschqAj8LV3M4KuZZ1DETSpCLqGdQ5H0KQi6KOsc0iCJhVBH2GdwxI0qQh6L+scmqBJRdB79FhnX3s3JWhSEfRWbuclCJpUBL2FdV7GP7Mf4PRGvFlO9IunhX5m9XU+UcylCJpkBP2IdV6OoLM6YcylCPq+1df5pASd0UnXuRRB37byOp845lIEncvJYy5F0NdWXmcEnYZ1LqUI+rtV11nMnwRNKoL+YJ1TEPTKxHxF0KWsu85c8ffQpYxZutZvGut8k4UeQczDCJpUBL0a6/yQoFci5qcE3Vur+1nMmwiaVAS9Auu8maB7anFuiHkXQZOKoCOzzrsJupfac0PMhwiaVAQdkXU+TNDRiLmKoHvw99XTCDoS61xN0FGIuQlBt3bk3BBzM4ImFUHPZp2bEnRLe88NMTcnaFIR9CzWuQtBzyDmbgTdim8HQxD0aNa5K0GPJObuBN2CcyMMQY9inYcQ9AhiHkbQtZ6dG2IeStCkIuierPNwgu5FzFMIuoaP68IRdA/WeRpBtybmqQR9lHMjJEG3ZJ2nE3QrYg5B0Ec4N8ISdAvWOQxB1xJzKIKuIeZwBL2X+zm0l8vb62X2QyzJOodkoY8Qc1iC3sO5EZ6g97LOoX3ez++//rzPfBCodXl7vVhoUhE0qXwG7eM7VvbRr4UmFUGTyregnR2s6Gu3FppUroK20qzkZ68WmlRuBm2lWcGtTu8utKiJ7F6fTg5SeRi0lSaiR10+XWhRE8mzHjedHKImgi0duqFJZXPQVpqZtva3a6FFzQx7utt9coiakfb2VhWn/4dIL0eHs+qXQmtNDzVdVX/KIWpaqu2paYxOEI5qNYxNP4e21hzRsptuAVprnukxgN0XVdj81PNf8qEngrjPa9Q5Ou3mFXd+M36n+h+ASh45CWDhbwAAAABJRU5ErkJggg==">
-
 <title>Bunk Budget — Sem V B2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
   :root{
-    --paper:#F3ECFF;
-    --paper-raised:#FFFFFF;
-    --ink:#2A1F45;
-    --ink-soft:#7A709A;
-    --line:#E1D4FA;
-    --safe:#1FA971;
-    --safe-bg:#DDF7EA;
-    --warn:#F08A1C;
-    --warn-bg:#FFEBCF;
-    --danger:#FF5C6C;
-    --danger-bg:#FFE0E3;
+    --page-bg:#0A0710;
+    --bg:#120C1E;
+    --surface:#1C1530;
+    --surface-2:#241C3B;
+    --ink:#F4F1FA;
+    --ink-soft:#9C93B5;
+    --line:#2E2748;
+    --safe:#34D399;
+    --safe-bg:rgba(52,211,153,0.14);
+    --warn:#FBBF24;
+    --warn-bg:rgba(251,191,36,0.14);
+    --danger:#FB7185;
+    --danger-bg:rgba(251,113,133,0.14);
     --accent:#FF4D82;
     --accent-2:#7B5CFA;
     --gold:#FFB020;
-    --gold-bg:#FFEFCF;
-    --radius:20px;
+    --radius:18px;
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;margin:0;}
   body{
-    margin:0;
-    background-color:var(--paper);
-    background-image:radial-gradient(circle, rgba(255,77,130,0.14) 1.6px, transparent 1.6px);
-    background-size:20px 20px;
+    background-color:var(--page-bg);
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(255,77,130,0.16), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(123,92,250,0.16), transparent 42%),
+      radial-gradient(circle at 50% 95%, rgba(255,176,32,0.10), transparent 45%);
     color:var(--ink);
     font-family:'Inter',system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;
-    padding-bottom:48px;
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;
   }
-  button{font-family:'Inter',system-ui,sans-serif;}
-  button, .sbtn, .chip-btn, .tab, .upload-btn, .save-cta, .action-btn, .reset-btn{
-    transition:transform .12s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+  button{font-family:'Inter',system-ui,sans-serif;color:inherit;}
+  .hidden{display:none !important;}
+  button, .sbtn, .chip-btn, .navtab, .upload-btn, .save-cta, .action-btn, .reset-btn, .course{
+    transition:transform .12s ease, background-color .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
   }
   button:active, .sbtn:active, .chip-btn:active, .upload-btn:active, .save-cta:active{transform:scale(0.95);}
-  .wrap{max-width:560px;margin:0 auto;padding:20px 16px 8px;}
-  .hidden{display:none !important;}
 
-  header.top{padding:6px 4px 18px;border-bottom:1px solid var(--line);margin-bottom:18px;}
-  header.top h1{
-    font-family:'Baloo 2',sans-serif;
-    font-weight:600;
-    font-size:28px;
-    letter-spacing:-0.01em;
-    margin:0 0 4px;
-    line-height:1.1;
+  /* ---------- App shell ---------- */
+  .app-shell{
+    width:100%;max-width:420px;height:100vh;background:var(--bg);
+    display:flex;flex-direction:column;overflow:hidden;position:relative;
   }
-  header.top p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.5;}
+  @media (min-width:480px){
+    .app-shell{
+      height:860px;max-height:92vh;border-radius:28px;
+      box-shadow:0 40px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05);
+    }
+  }
+  .app-flex{display:flex;flex-direction:column;height:100%;}
+
+  /* ---------- Header ---------- */
+  header.top{
+    padding:18px 18px 14px;flex-shrink:0;
+    border-bottom:1px solid var(--line);
+    background:var(--surface-2);
+  }
+  header.top h1{
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:24px;
+    letter-spacing:-0.01em;margin:0 0 3px;line-height:1.1;color:var(--ink);
+  }
+  header.top p{margin:0;color:var(--ink-soft);font-size:12.5px;line-height:1.5;}
   #todayLine{font-weight:600;color:var(--ink);}
   #greeting{font-family:'Baloo 2',sans-serif;font-weight:500;}
 
-  .summary-row{display:flex;gap:10px;margin-top:14px;}
-  .summary-chip{
-    flex:1;background:var(--paper-raised);border:2px solid var(--line);
-    border-radius:16px;padding:10px 12px;
-    box-shadow:0 3px 0 var(--line);
+  /* ---------- Stat deck (horizontal scroll) ---------- */
+  .stat-deck{
+    display:flex;gap:10px;margin-top:14px;overflow-x:auto;
+    scroll-snap-type:x mandatory;padding-bottom:2px;
+    -ms-overflow-style:none;scrollbar-width:none;
   }
-  .summary-chip .n{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:600;line-height:1;}
-  .summary-chip .l{font-size:11.5px;color:var(--ink-soft);margin-top:4px;}
+  .stat-deck::-webkit-scrollbar{display:none;}
+  .stat-card{
+    flex:0 0 auto;scroll-snap-align:start;min-width:118px;
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:12px 14px;
+  }
+  .stat-card .n{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:700;line-height:1;color:var(--accent);}
+  .stat-card .l{font-size:11px;color:var(--ink-soft);margin-top:5px;line-height:1.3;}
 
-  .term-ribbon{margin-top:18px;padding:2px 4px 0;}
-  .term-ribbon-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink-soft);margin-bottom:6px;font-weight:600;}
-  .term-track{position:relative;height:6px;border-radius:4px;background:var(--line);}
+  /* ---------- Term progress (native-style slider look) ---------- */
+  .term-ribbon{margin-top:16px;padding:0 2px;}
+  .term-ribbon-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink-soft);margin-bottom:8px;font-weight:600;}
+  .term-track{position:relative;height:4px;border-radius:4px;background:var(--line);}
   .term-fill{position:absolute;top:0;left:0;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--gold));width:0%;transition:width 1s cubic-bezier(.22,1,.36,1);}
   .term-marker{
-    position:absolute;top:50%;width:13px;height:13px;border-radius:50%;background:var(--gold);
-    border:2.5px solid var(--paper-raised);transform:translate(-50%,-50%);left:0%;
-    transition:left 1s cubic-bezier(.22,1,.36,1);
-    box-shadow:0 0 0 4px rgba(184,134,59,0.18);
+    position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:#fff;
+    transform:translate(-50%,-50%);left:0%;transition:left 1s cubic-bezier(.22,1,.36,1);
+    box-shadow:0 2px 8px rgba(0,0,0,0.45), 0 0 0 3px rgba(255,255,255,0.08);
   }
 
-  .tabs{display:flex;gap:6px;margin:22px 0 14px;border-bottom:1px solid var(--line);position:relative;}
-  .tab{
-    font-family:'Inter';font-size:13.5px;font-weight:600;color:var(--ink-soft);
-    background:none;border:none;padding:9px 4px;cursor:pointer;
-    position:relative;z-index:1;
-  }
-  .tab.active{color:var(--ink);}
-  .tab-indicator{
-    position:absolute;bottom:-1px;height:2px;background:var(--accent);
-    transition:left .25s cubic-bezier(.22,1,.36,1), width .25s cubic-bezier(.22,1,.36,1);
-  }
-
+  /* ---------- Content scroll area ---------- */
+  main.content-scroll{flex:1;overflow-y:auto;padding:16px 16px 90px;-webkit-overflow-scrolling:touch;}
   .view{display:none;}
   .view.active{display:block;}
 
-  /* Course cards */
-  .course{
-    background:var(--paper-raised);border:2px solid var(--line);border-radius:var(--radius);
-    padding:14px 16px;margin-bottom:14px;cursor:pointer;
-    box-shadow:0 3px 0 var(--line);
-    transition:transform .12s ease, box-shadow .12s ease;
+  /* ---------- Bottom nav ---------- */
+  nav.bottom-nav{
+    flex-shrink:0;display:flex;background:var(--surface-2);
+    border-top:1px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom));
   }
-  .course:active{transform:translateY(2px);box-shadow:0 1px 0 var(--line);}
-  .course.safe{border-color:#BFEDD5;box-shadow:0 3px 0 #BFEDD5;}
-  .course.warn{border-color:#FFD9A3;box-shadow:0 3px 0 #FFD9A3;}
-  .course.danger{border-color:#FFC3C9;box-shadow:0 3px 0 #FFC3C9;}
+  .navtab{
+    flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+    background:none;border:none;padding:6px 4px;cursor:pointer;color:var(--ink-soft);
+  }
+  .navtab svg{width:22px;height:22px;}
+  .navtab .navlabel{font-size:10.5px;font-weight:600;}
+  .navtab.active{color:var(--accent);}
+  .navtab.active svg{transform:scale(1.08);}
+
+  /* ---------- Course cards ---------- */
+  .course{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:14px 15px;margin-bottom:12px;cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,0.28);
+  }
+  .course:active{transform:scale(0.98);}
+  .course.safe{box-shadow:0 8px 20px rgba(52,211,153,0.10);}
+  .course.warn{box-shadow:0 8px 20px rgba(251,191,36,0.10);}
+  .course.danger{box-shadow:0 8px 20px rgba(251,113,133,0.12);}
   .course-top{display:flex;justify-content:space-between;align-items:center;gap:12px;}
-  .course-left{display:flex;align-items:center;gap:13px;min-width:0;}
-  .ring-wrap{position:relative;width:52px;height:52px;flex-shrink:0;}
+  .course-left{display:flex;align-items:center;gap:12px;min-width:0;}
+  .ring-wrap{position:relative;width:50px;height:50px;flex-shrink:0;}
   .ring-wrap svg{transform:rotate(-90deg);}
   .ring-track{fill:none;stroke:var(--line);stroke-width:5;}
   .ring-fill{fill:none;stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset 1.1s cubic-bezier(.22,1,.36,1);}
   .ring-pct{
     position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:'Baloo 2',sans-serif;font-weight:600;font-size:12.5px;
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:12px;
   }
-  .course-name{font-family:'Baloo 2',sans-serif;font-weight:600;font-size:15.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .course-code{font-size:11px;color:var(--ink-soft);font-weight:600;letter-spacing:0.02em;margin-top:2px;}
+  .course-name{font-family:'Baloo 2',sans-serif;font-weight:600;font-size:15px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);}
+  .course-code{font-size:10.5px;color:var(--ink-soft);font-weight:600;letter-spacing:0.03em;margin-top:2px;}
   .chev{color:var(--ink-soft);font-size:12px;flex-shrink:0;transition:transform .2s ease;}
   .course.expanded .chev{transform:rotate(180deg);}
-  .course-detail{
-    max-height:0;overflow:hidden;transition:max-height .28s ease;
-  }
+  .course-detail{max-height:0;overflow:hidden;transition:max-height .28s ease;}
   .course.expanded .course-detail{max-height:160px;}
-  .course-stats{font-size:12.5px;color:var(--ink-soft);margin:12px 0 8px;padding-top:12px;border-top:1px solid var(--line);}
-  .verdict{
-    font-size:13.5px;line-height:1.45;padding:9px 11px;border-radius:9px;font-weight:500;
-  }
+  .course-stats{font-size:12px;color:var(--ink-soft);margin:12px 0 8px;padding-top:12px;border-top:1px solid var(--line);}
+  .verdict{font-size:13px;line-height:1.45;padding:9px 11px;border-radius:10px;font-weight:500;}
   .safe .verdict{background:var(--safe-bg);color:var(--safe);}
   .warn .verdict{background:var(--warn-bg);color:var(--warn);}
   .danger .verdict{background:var(--danger-bg);color:var(--danger);}
@@ -143,112 +164,147 @@
   .warn .ring-pct{color:var(--warn);}
   .danger .ring-pct{color:var(--danger);}
 
-  /* Log */
+  /* ---------- Log ---------- */
   .filter-row{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
   .chip-btn{
-    font-family:'Inter';font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:100px;
-    border:1px solid var(--line);background:var(--paper-raised);color:var(--ink-soft);cursor:pointer;
+    font-family:'Inter';font-size:12px;font-weight:600;padding:7px 13px;border-radius:100px;
+    border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);cursor:pointer;
   }
   .chip-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
   .date-group{margin-bottom:16px;}
-  .date-heading{
-    font-size:12px;font-weight:700;color:var(--ink-soft);margin:0 0 8px 2px;
-    display:flex;align-items:center;gap:6px;
-  }
+  .date-heading{font-size:11.5px;font-weight:700;color:var(--ink-soft);margin:0 0 8px 2px;display:flex;align-items:center;gap:6px;}
   .date-heading.is-today{color:var(--accent);}
   .today-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
 
   .sess-row{
     display:flex;align-items:center;justify-content:space-between;gap:10px;
-    background:var(--paper-raised);border:1px solid var(--line);border-radius:11px;
+    background:var(--surface);border:1px solid var(--line);border-radius:13px;
     padding:10px 12px;margin-bottom:7px;
   }
-  .sess-course{font-size:13.5px;font-weight:600;}
-  .sess-course small{display:block;font-weight:400;color:var(--ink-soft);font-size:11.5px;margin-top:1px;}
+  .sess-course{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .sess-course small{display:block;width:100%;font-weight:400;color:var(--ink-soft);font-size:11px;margin-top:1px;}
+  .lab-badge{
+    font-size:9.5px;font-weight:700;letter-spacing:0.02em;color:var(--accent-2);
+    background:rgba(123,92,250,0.16);padding:2px 7px;border-radius:100px;
+  }
+  .makeup-badge{
+    font-size:9.5px;font-weight:700;letter-spacing:0.02em;color:var(--gold);
+    background:rgba(255,176,32,0.16);padding:2px 7px;border-radius:100px;
+  }
   .sess-actions{display:flex;gap:5px;}
   .sbtn{
-    width:34px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--paper);
+    width:34px;height:30px;border-radius:9px;border:1px solid var(--line);background:var(--bg);
     font-size:14px;cursor:pointer;color:var(--ink-soft);
   }
-  .sbtn.present.on{background:var(--safe);border-color:var(--safe);color:#fff;animation:pop .28s ease;}
-  .sbtn.absent.on{background:var(--danger);border-color:var(--danger);color:#fff;animation:pop .28s ease;}
-  .sbtn.cancelled.on{background:#8B8F84;border-color:#8B8F84;color:#fff;animation:pop .28s ease;}
-  @keyframes pop{
-    0%{transform:scale(1);}
-    45%{transform:scale(1.22);}
-    100%{transform:scale(1);}
-  }
-  .sess-row{transition:opacity .2s ease;}
+  .sbtn.present.on{background:var(--safe);border-color:var(--safe);color:#0A0710;animation:pop .28s ease;}
+  .sbtn.absent.on{background:var(--danger);border-color:var(--danger);color:#0A0710;animation:pop .28s ease;}
+  .sbtn.cancelled.on{background:#6B6483;border-color:#6B6483;color:#fff;animation:pop .28s ease;}
+  @keyframes pop{0%{transform:scale(1);}45%{transform:scale(1.22);}100%{transform:scale(1);}}
   .empty-note{font-size:13px;color:var(--ink-soft);padding:20px 4px;text-align:center;}
 
-  /* Settings */
-  .settings-box{
-    background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius);
-    padding:14px 16px;margin-bottom:12px;
-  }
-  .note{font-size:12px;color:var(--ink-soft);line-height:1.55;margin-top:14px;padding:0 2px;}
+  /* ---------- Settings ---------- */
+  .note{font-size:12px;color:var(--ink-soft);line-height:1.6;margin-top:14px;padding:0 2px;}
   .action-btn{
-    margin-top:6px;width:100%;padding:11px;border-radius:10px;border:1px solid var(--accent);
+    margin-top:6px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--accent);
     background:none;color:var(--accent);font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;
   }
   .reset-btn{
-    margin-top:10px;width:100%;padding:11px;border-radius:10px;border:1px solid var(--danger);
+    margin-top:10px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--danger);
     background:none;color:var(--danger);font-family:'Inter';font-weight:600;font-size:13px;cursor:pointer;
   }
 
-  /* Setup screen */
-  #setupScreen{max-width:560px;margin:0 auto;padding:28px 16px 40px;}
-  .setup-head h1{font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:600;margin:0 0 8px;line-height:1.2;}
-  .setup-head p{color:var(--ink-soft);font-size:13.5px;line-height:1.55;margin:0 0 22px;}
-  .field-label{font-size:12.5px;font-weight:600;color:var(--ink-soft);margin:0 0 6px 2px;}
+  .settings-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:14px 15px;margin-bottom:14px;
+  }
+  .settings-card h3{font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:600;margin:0 0 4px;color:var(--ink);}
+  .settings-card .sub{font-size:11.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 12px;}
+  .reschedule-row{display:flex;gap:8px;margin-bottom:8px;}
+  select{
+    font-family:'Inter';font-size:13px;padding:10px 11px;border-radius:10px;
+    border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;
+  }
+  select:focus, input[type="date"]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,77,130,0.16);}
+  input[type="date"]{
+    font-family:'Inter';font-size:13px;padding:10px 11px;border-radius:10px;
+    border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;
+    color-scheme:dark;
+  }
+  .add-extra-btn{
+    width:100%;padding:11px;border-radius:11px;border:none;background:var(--gold);color:#241C3B;
+    font-family:'Inter';font-weight:700;font-size:13px;cursor:pointer;margin-top:2px;
+  }
+  .extras-list{margin-top:12px;}
+  .extra-row{
+    display:flex;justify-content:space-between;align-items:center;gap:8px;
+    background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:6px;
+    font-size:12px;
+  }
+  .extra-row .extra-info{color:var(--ink-soft);}
+  .extra-row .extra-info b{color:var(--ink);font-weight:600;}
+  .extra-del{
+    width:26px;height:26px;border-radius:8px;border:1px solid var(--line);background:var(--surface);
+    color:var(--danger);cursor:pointer;font-size:13px;flex-shrink:0;
+  }
+
+  /* ---------- Setup screen ---------- */
+  #setupScreen{height:100%;overflow-y:auto;padding:26px 18px 40px;-webkit-overflow-scrolling:touch;}
+  .setup-head h1{font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:700;margin:0 0 8px;line-height:1.2;color:var(--ink);}
+  .setup-head p{color:var(--ink-soft);font-size:13px;line-height:1.55;margin:0 0 22px;}
+  .field-label{font-size:12px;font-weight:600;color:var(--ink-soft);margin:0 0 6px 2px;}
   input[type="text"], input[type="number"]{
-    font-family:'Inter';font-size:14px;padding:10px 12px;border-radius:9px;
-    border:1px solid var(--line);background:var(--paper-raised);color:var(--ink);width:100%;
+    font-family:'Inter';font-size:14px;padding:11px 13px;border-radius:11px;
+    border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;
+  }
+  input[type="text"]:focus, input[type="number"]:focus{
+    outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,77,130,0.16);
   }
   input[type="number"]{-moz-appearance:textfield;}
   .name-field{margin-bottom:20px;}
-  .setup-course{
-    background:var(--paper-raised);border:2px solid var(--line);border-radius:16px;
-    padding:12px 14px;margin-bottom:10px;
+  .setup-course{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;}
+  .setup-course-name{font-size:13px;font-weight:600;margin-bottom:9px;color:var(--ink);}
+  .setup-course-name span{font-weight:400;color:var(--ink-soft);font-size:11px;display:block;margin-top:1px;}
+  .num-pair{
+    display:flex;align-items:stretch;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--bg);
   }
-  .setup-course-name{font-size:13.5px;font-weight:600;margin-bottom:8px;}
-  .setup-course-name span{font-weight:400;color:var(--ink-soft);font-size:11.5px;display:block;margin-top:1px;}
-  .num-pair{display:flex;gap:10px;align-items:center;}
-  .num-pair .num-field{flex:1;}
-  .num-pair label{font-size:11px;color:var(--ink-soft);display:block;margin-bottom:4px;}
-  .num-pair .sep{color:var(--ink-soft);font-size:14px;padding-top:14px;}
+  .num-pair .num-field{flex:1;position:relative;}
+  .num-pair .num-field:first-child{border-right:1px solid var(--line);}
+  .num-pair label{font-size:10px;color:var(--ink-soft);display:block;padding:7px 10px 0;font-weight:600;}
+  .num-pair input{border:none;background:none;padding:2px 10px 9px;box-shadow:none !important;}
+  .num-pair input:focus{box-shadow:none !important;}
+  .num-pair:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,77,130,0.16);}
   .save-cta{
-    width:100%;padding:14px;border-radius:14px;border:none;background:var(--accent);color:#fff;
+    width:100%;padding:15px;border-radius:100px;border:none;background:var(--accent);color:#fff;
     font-family:'Baloo 2',sans-serif;font-weight:700;font-size:16px;cursor:pointer;margin-top:16px;
-    box-shadow:0 4px 0 #C7295A;
+    box-shadow:0 10px 24px rgba(255,77,130,0.35);
   }
-  .save-cta:active{box-shadow:0 1px 0 #C7295A;}
-  .setup-note{font-size:12px;color:var(--ink-soft);line-height:1.55;margin-top:16px;}
+  .setup-note{font-size:11.5px;color:var(--ink-soft);line-height:1.55;margin-top:16px;}
 
   .upload-box{
-    border:2.5px dashed #D8C4FA;border-radius:16px;padding:16px;text-align:center;
-    background:var(--paper-raised);margin-bottom:22px;transition:border-color .15s ease, background .15s ease;
+    border:2px dashed #4A3E72;border-radius:16px;padding:18px;text-align:center;
+    background:var(--surface);margin-bottom:22px;transition:border-color .15s ease, background .15s ease;
   }
-  .upload-box.drag-over{border-color:var(--accent);background:var(--gold-bg);}
-  .upload-icon{font-size:26px;margin-bottom:4px;}
-  .upload-box p{margin:0 0 10px;font-size:13px;color:var(--ink-soft);line-height:1.5;}
+  .upload-box.drag-over{border-color:var(--accent);background:rgba(255,77,130,0.08);}
+  .upload-icon{font-size:24px;margin-bottom:4px;}
+  .upload-box p{margin:0 0 12px;font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
   .upload-btn{
-    display:inline-block;padding:10px 18px;border-radius:11px;background:var(--accent-2);color:#fff;
+    display:inline-block;padding:11px 20px;border-radius:100px;background:var(--accent-2);color:#fff;
     font-family:'Inter';font-weight:700;font-size:13px;cursor:pointer;border:none;
-    box-shadow:0 3px 0 #5C3EDB;
+    box-shadow:0 8px 20px rgba(123,92,250,0.35);
   }
-  .upload-btn:active{box-shadow:0 1px 0 #5C3EDB;}
   #pdfFileInput{display:none;}
-  .upload-status{font-size:12.5px;margin-top:10px;line-height:1.5;text-align:left;}
+  .upload-status{font-size:12px;margin-top:10px;line-height:1.5;text-align:left;}
   .upload-status.ok{color:var(--safe);}
   .upload-status.warn{color:var(--warn);}
   .upload-status.err{color:var(--danger);}
-  .divider-row{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--ink-soft);font-size:11.5px;font-weight:600;}
+  .divider-row{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--ink-soft);font-size:11px;font-weight:600;}
   .divider-row::before, .divider-row::after{content:'';flex:1;height:1px;background:var(--line);}
 </style>
 </head>
 <body>
+
+<div class="app-shell">
 
 <div id="setupScreen">
   <div class="setup-head">
@@ -272,21 +328,21 @@
   <p class="setup-note">For each subject, add your Theory and Practical rows together — e.g. if Data Wrangling shows Theory 15/14 and Practical 12/10 on your report, enter Conducted 27 and Attended 24. If a subject has only one row (like POM or MM), just copy it across.</p>
 </div>
 
-<div class="wrap hidden" id="mainApp">
+<div class="app-flex hidden" id="mainApp">
 
   <header class="top">
     <h1>Bunk Budget</h1>
     <p><span id="greeting"></span> · Sem V CSE (Data Science), B2 · lectures run till <b>5 Nov 2026</b><br><span id="todayLine"></span></p>
-    <div class="summary-row">
-      <div class="summary-chip">
+    <div class="stat-deck">
+      <div class="stat-card">
         <div class="n" id="daysLeft">–</div>
         <div class="l">days till freedom (5 Nov)</div>
       </div>
-      <div class="summary-chip">
+      <div class="stat-card">
         <div class="n" id="sessLeft">–</div>
         <div class="l">classes left to log</div>
       </div>
-      <div class="summary-chip">
+      <div class="stat-card">
         <div class="n" id="riskCount">–</div>
         <div class="l">course(s) on thin ice</div>
       </div>
@@ -300,68 +356,99 @@
     </div>
   </header>
 
-  <div class="tabs">
-    <button class="tab active" data-view="courses">Courses</button>
-    <button class="tab" data-view="log">Log classes</button>
-    <button class="tab" data-view="settings">Settings</button>
-    <div class="tab-indicator" id="tabIndicator"></div>
-  </div>
+  <main class="content-scroll">
+    <div class="view active" id="view-courses"></div>
 
-  <div class="view active" id="view-courses"></div>
-
-  <div class="view" id="view-log">
-    <div class="filter-row">
-      <button class="chip-btn active" data-filter="unlogged">Needs logging</button>
-      <button class="chip-btn" data-filter="upcoming">Upcoming</button>
-      <button class="chip-btn" data-filter="all">All</button>
+    <div class="view" id="view-log">
+      <div class="filter-row">
+        <button class="chip-btn active" data-filter="unlogged">Needs logging</button>
+        <button class="chip-btn" data-filter="upcoming">Upcoming</button>
+        <button class="chip-btn" data-filter="all">All</button>
+      </div>
+      <div id="logList"></div>
     </div>
-    <div id="logList"></div>
-  </div>
 
-  <div class="view" id="view-settings">
-    <button class="action-btn" id="editNumbersBtn">Update my attendance numbers</button>
-    <p class="note">
-      Weekly class counts per course (how many periods a week each subject meets) were read off the Sem V timetable for Batch B2, with 2-hour lab/practical blocks counted as 2 periods and regular lectures as 1 — holidays are pulled from the NMIMS 2026 calendar and academic schedule. Mid-term weeks (17–22 Aug, 7–12 Sep for management subjects, 5–10 Oct) aren't excluded — tests run inside the normal lecture slot, so regular classes still happen as scheduled around them. Term runs through <b>5 November 2026</b>.
-    </p>
-    <button class="reset-btn" id="resetBtn">Reset all logged classes</button>
-  </div>
+    <div class="view" id="view-settings">
+      <button class="action-btn" id="editNumbersBtn">Update my attendance numbers</button>
+
+      <div class="settings-card">
+        <h3>Got a reschedule email? 📬</h3>
+        <p class="sub">Add the makeup class here — it'll show up in your Log with a "Rescheduled" tag and count toward that subject.</p>
+        <div class="reschedule-row">
+          <select id="extraCourse"></select>
+        </div>
+        <div class="reschedule-row">
+          <input type="date" id="extraDate">
+          <select id="extraType" style="max-width:110px;">
+            <option value="lecture">Lecture</option>
+            <option value="lab">Lab (2hr)</option>
+          </select>
+        </div>
+        <button class="add-extra-btn" id="addExtraBtn">Add rescheduled class</button>
+        <div class="extras-list" id="extrasList"></div>
+      </div>
+
+      <p class="note">
+        Weekly class counts per course were read off the Sem V timetable for Batch B2. 2-hour lab/practical blocks show as a single entry in the log but count as 2 classes toward attendance — holidays are pulled from the NMIMS 2026 calendar and academic schedule. Mid-term weeks (17–22 Aug, 7–12 Sep for management subjects, 5–10 Oct) aren't excluded — tests run inside the normal lecture slot, so regular classes still happen as scheduled around them. Term runs through <b>5 November 2026</b>.
+      </p>
+      <button class="reset-btn" id="resetBtn">Reset all logged classes</button>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="navtab active" data-view="courses">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
+      <span class="navlabel">Courses</span>
+    </button>
+    <button class="navtab" data-view="log">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M8 15l2.5 2.5L16 12"/></svg>
+      <span class="navlabel">Log</span>
+    </button>
+    <button class="navtab" data-view="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2" fill="currentColor" stroke="none"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="16" cy="12" r="2" fill="currentColor" stroke="none"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="11" cy="18" r="2" fill="currentColor" stroke="none"/></svg>
+      <span class="navlabel">Settings</span>
+    </button>
+  </nav>
+
+</div>
 
 </div>
 
 <script>
 /* ---------- Course timetable (shared, Batch B2) ---------- */
-/* weekdays: 0=Sun..6=Sat, one entry per weekly period. Lab/practical periods (2hr blocks) are listed twice. */
+/* Each slot is one weekly class period. type 'lab' = 2-hour block: shown as ONE log entry but worth 2 classes. */
 const COURSE_META = [
-  { id:'ml',    name:'Machine Learning',                         code:'ML',    weekdays:[1,4,3,3] },
-  { id:'dw',    name:'Data Wrangling',                            code:'DW',    weekdays:[1,1,1,2] },
-  { id:'dc',    name:'Design for Consumers',                      code:'DC',    weekdays:[2,2,2] },
-  { id:'pom',   name:'Principles of Management',                  code:'POM',   weekdays:[1,4,4] },
-  { id:'mm',    name:'Marketing Management',                      code:'MM',    weekdays:[1,3,4] },
-  { id:'abapr', name:'Adv. Business Analytics in Python & R',     code:'ABAPR', weekdays:[2,4,4,4] },
-  { id:'amba',  name:'Advanced Modelling for Business Analytics', code:'AMBA',  weekdays:[6,6,6] },
+  { id:'ml',    name:'Machine Learning',                         code:'ML',    slots:[{day:1,type:'lecture'},{day:4,type:'lecture'},{day:3,type:'lab'}] },
+  { id:'dw',    name:'Data Wrangling',                            code:'DW',    slots:[{day:1,type:'lab'},{day:1,type:'lecture'},{day:2,type:'lecture'}] },
+  { id:'dc',    name:'Design for Consumers',                      code:'DC',    slots:[{day:2,type:'lecture'},{day:2,type:'lab'}] },
+  { id:'pom',   name:'Principles of Management',                  code:'POM',   slots:[{day:1,type:'lecture'},{day:4,type:'lecture'},{day:4,type:'lecture'}] },
+  { id:'mm',    name:'Marketing Management',                      code:'MM',    slots:[{day:1,type:'lecture'},{day:3,type:'lecture'},{day:4,type:'lecture'}] },
+  { id:'abapr', name:'Adv. Business Analytics in Python & R',     code:'ABAPR', slots:[{day:2,type:'lecture'},{day:4,type:'lab'},{day:4,type:'lecture'}] },
+  { id:'amba',  name:'Advanced Modelling for Business Analytics', code:'AMBA',  slots:[{day:6,type:'lab'},{day:6,type:'lecture'}] },
 ];
+function weightOf(type){ return type==='lab' ? 2 : 1; }
 
-const START_DATE = '2026-08-30'; // day after the standard attendance report cutoff
-const END_DATE   = '2026-11-05'; // last day of term
-const HARD_HOLIDAYS = ['2026-09-14','2026-10-19','2026-10-20','2026-10-24']; // Ganesh Chaturthi, holiday, Dussehra, holiday
+const START_DATE = '2026-08-30';
+const END_DATE   = '2026-11-05';
+const HARD_HOLIDAYS = ['2026-09-14','2026-10-19','2026-10-20','2026-10-24'];
 
-let profile = null; // { name, base: { ml:{attended,conducted}, ... } }
-let log = {}; // key: `${date}__${courseId}__${idx}` -> 'present'|'absent'|'cancelled'
+let profile = null;
+let log = {};
 
-/* ---------- storage helpers ---------- */
-/* Primary: browser localStorage — persists on a Home Screen app with no Claude connection needed.
-   Secondary (best-effort): window.storage, kept in sync when running inside a Claude artifact. */
+/* ---------- storage ---------- */
 const LS_PROFILE = 'bunkbudget_profile';
 const LS_LOG = 'bunkbudget_log';
-
+const LS_EXTRAS = 'bunkbudget_extras';
+let extras = []; // manually-added rescheduled/makeup classes: {id, date, courseId, type}
 async function loadState(){
   try{
     const lp = localStorage.getItem(LS_PROFILE);
     if(lp) profile = JSON.parse(lp);
     const ll = localStorage.getItem(LS_LOG);
     if(ll) log = JSON.parse(ll);
+    const le = localStorage.getItem(LS_EXTRAS);
+    if(le) extras = JSON.parse(le);
   }catch(e){}
-  // If Claude's storage is available and has data (e.g. first load in a new browser), prefer it if local is empty
   try{
     if(!profile){
       const p = await window.storage.get('profile');
@@ -370,6 +457,10 @@ async function loadState(){
     if(Object.keys(log).length === 0){
       const l = await window.storage.get('log');
       if(l && l.value) log = JSON.parse(l.value);
+    }
+    if(extras.length === 0){
+      const ex = await window.storage.get('extras');
+      if(ex && ex.value) extras = JSON.parse(ex.value);
     }
   }catch(e){}
 }
@@ -380,6 +471,10 @@ async function saveProfile(){
 async function saveLog(){
   try{ localStorage.setItem(LS_LOG, JSON.stringify(log)); }catch(e){}
   try{ await window.storage.set('log', JSON.stringify(log)); }catch(e){}
+}
+async function saveExtras(){
+  try{ localStorage.setItem(LS_EXTRAS, JSON.stringify(extras)); }catch(e){}
+  try{ await window.storage.set('extras', JSON.stringify(extras)); }catch(e){}
 }
 
 /* ---------- date helpers ---------- */
@@ -393,7 +488,7 @@ function humanDate(dateStr){
   return d.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
 }
 
-/* ---------- generate the term's session list ---------- */
+/* ---------- generate sessions ---------- */
 function generateSessions(){
   const sessions = [];
   let cur = toDate(START_DATE);
@@ -403,20 +498,21 @@ function generateSessions(){
     const dow = cur.getDay();
     if(!HARD_HOLIDAYS.includes(dateStr)){
       COURSE_META.forEach(c=>{
-        let idx = 0;
-        c.weekdays.forEach(wd=>{
-          if(wd === dow){
-            sessions.push({date:dateStr, courseId:c.id, idx:idx});
-            idx++;
+        c.slots.forEach((slot, slotIdx)=>{
+          if(slot.day === dow){
+            sessions.push({date:dateStr, courseId:c.id, slotIdx, type:slot.type, weight:weightOf(slot.type)});
           }
         });
       });
     }
     cur.setDate(cur.getDate()+1);
   }
+  extras.forEach(ex=>{
+    sessions.push({date:ex.date, courseId:ex.courseId, slotIdx:'extra-'+ex.id, type:ex.type, weight:weightOf(ex.type), isExtra:true});
+  });
   return sessions;
 }
-function sessKey(s){ return `${s.date}__${s.courseId}__${s.idx}`; }
+function sessKey(s){ return `${s.date}__${s.courseId}__${s.slotIdx}`; }
 
 /* ---------- compute per-course numbers ---------- */
 function computeCourseStats(sessions){
@@ -425,10 +521,11 @@ function computeCourseStats(sessions){
   sessions.forEach(s=>{
     const st = log[sessKey(s)];
     const c = byId[s.courseId];
-    if(st==='present') c.present++;
-    else if(st==='absent') c.absent++;
-    else if(st==='cancelled') c.cancelled++;
-    else c.pending++;
+    const w = s.weight;
+    if(st==='present') c.present += w;
+    else if(st==='absent') c.absent += w;
+    else if(st==='cancelled') c.cancelled += w;
+    else c.pending += w;
   });
   return Object.values(byId).map(c=>{
     const base = (profile.base && profile.base[c.id]) || {attended:0, conducted:0};
@@ -442,24 +539,19 @@ function computeCourseStats(sessions){
     return { ...c, attendedTotal, conductedTotal, remaining, currentPct, minNeeded, bunkable, maxFinalPct };
   });
 }
-
-function statusOf(pct){
-  if(pct >= 80) return 'safe';
-  if(pct >= 75) return 'warn';
-  return 'danger';
-}
+function statusOf(pct){ if(pct >= 80) return 'safe'; if(pct >= 75) return 'warn'; return 'danger'; }
 
 /* ---------- render: courses ---------- */
 const expandedCourses = new Set();
-function ringMarkup(pct, statusClass){
-  const r = 22, c = 2*Math.PI*r;
+function ringMarkup(pct){
+  const r = 21, c = 2*Math.PI*r;
   const clamped = Math.max(0, Math.min(100, pct));
   const offset = c - (clamped/100)*c;
   return `
     <div class="ring-wrap">
-      <svg width="52" height="52" viewBox="0 0 52 52">
-        <circle class="ring-track" cx="26" cy="26" r="${r}"></circle>
-        <circle class="ring-fill" cx="26" cy="26" r="${r}" stroke-dasharray="${c}" stroke-dashoffset="${c}" data-target-offset="${offset}"></circle>
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <circle class="ring-track" cx="25" cy="25" r="${r}"></circle>
+        <circle class="ring-fill" cx="25" cy="25" r="${r}" stroke-dasharray="${c}" stroke-dashoffset="${c}" data-target-offset="${offset}"></circle>
       </svg>
       <div class="ring-pct">${Math.round(pct)}%</div>
     </div>
@@ -489,7 +581,7 @@ function renderCourses(stats){
       <div class="course ${status} ${isExpanded?'expanded':''}" data-course-id="${c.id}">
         <div class="course-top">
           <div class="course-left">
-            ${ringMarkup(c.currentPct, status)}
+            ${ringMarkup(c.currentPct)}
             <div style="min-width:0;">
               <div class="course-name">${c.name}</div>
               <div class="course-code">${c.code}</div>
@@ -514,7 +606,6 @@ function renderCourses(stats){
     });
   });
 
-  // animate rings in on next frame
   requestAnimationFrame(()=>{
     requestAnimationFrame(()=>{
       el.querySelectorAll('.ring-fill').forEach(ring=>{
@@ -549,9 +640,11 @@ function renderLog(sessions){
         ${rows.map(s=>{
           const c = courseById[s.courseId];
           const st = log[sessKey(s)] || '';
+          const labBadge = s.type==='lab' ? '<span class="lab-badge">Lab · 2 classes</span>' : '';
+          const makeupBadge = s.isExtra ? '<span class="makeup-badge">Rescheduled</span>' : '';
           return `
             <div class="sess-row">
-              <div class="sess-course">${c.code}<small>${c.name}</small></div>
+              <div class="sess-course">${c.code} ${labBadge} ${makeupBadge}<small>${c.name}</small></div>
               <div class="sess-actions">
                 <button class="sbtn present ${st==='present'?'on':''}" data-key="${sessKey(s)}" data-status="present" title="Present">✓</button>
                 <button class="sbtn absent ${st==='absent'?'on':''}" data-key="${sessKey(s)}" data-status="absent" title="Absent">✕</button>
@@ -622,7 +715,6 @@ function renderSetupCourses(prefill){
             <label>Conducted</label>
             <input type="number" min="0" inputmode="numeric" id="c_${c.id}_conducted" value="${base.conducted}">
           </div>
-          <div class="sep">/</div>
           <div class="num-field">
             <label>Attended</label>
             <input type="number" min="0" inputmode="numeric" id="c_${c.id}_attended" value="${base.attended}">
@@ -643,8 +735,9 @@ function showSetup(prefillProfile){
 function showMainApp(){
   document.getElementById('setupScreen').classList.add('hidden');
   document.getElementById('mainApp').classList.remove('hidden');
+  populateExtraCourseSelect();
+  renderExtrasList();
   rerender();
-  requestAnimationFrame(()=> moveTabIndicator(document.querySelector('.tab.active')));
 }
 
 /* ---------- PDF parsing ---------- */
@@ -657,7 +750,6 @@ const COURSE_KEYWORDS = {
   abapr: ['BUSINESS ANALYTICS IN PYTHON'],
   amba:  ['MODELING FOR BUSINESS ANALYTICS','MODELLING FOR BUSINESS ANALYTICS'],
 };
-
 async function extractPdfText(file){
   const buf = await file.arrayBuffer();
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -670,12 +762,10 @@ async function extractPdfText(file){
   }
   return text;
 }
-
 function parseAttendanceText(rawText){
   const text = rawText.replace(/\s+/g,' ').toUpperCase();
   const result = {};
   COURSE_META.forEach(c=> result[c.id] = {conducted:0, attended:0, matched:false});
-
   Object.entries(COURSE_KEYWORDS).forEach(([id, keywords])=>{
     keywords.forEach(kw=>{
       let searchFrom = 0;
@@ -707,7 +797,6 @@ document.getElementById('pdfFileInput').addEventListener('change', async (e)=>{
   if(!file) return;
   await handlePdfFile(file);
 });
-
 const uploadBox = document.getElementById('uploadBox');
 uploadBox.addEventListener('dragover', (e)=>{ e.preventDefault(); uploadBox.classList.add('drag-over'); });
 uploadBox.addEventListener('dragleave', ()=> uploadBox.classList.remove('drag-over'));
@@ -717,7 +806,6 @@ uploadBox.addEventListener('drop', async (e)=>{
   const file = e.dataTransfer.files[0];
   if(file) await handlePdfFile(file);
 });
-
 async function handlePdfFile(file){
   const statusEl = document.getElementById('uploadStatus');
   statusEl.className = 'upload-status';
@@ -756,24 +844,16 @@ document.getElementById('setupSave').addEventListener('click', async ()=>{
   await saveProfile();
   showMainApp();
 });
+document.getElementById('editNumbersBtn').addEventListener('click', ()=>{ showSetup(profile); });
 
-document.getElementById('editNumbersBtn').addEventListener('click', ()=>{
-  showSetup(profile);
-});
-
-/* ---------- tabs ---------- */
-function moveTabIndicator(tabEl){
-  const indicator = document.getElementById('tabIndicator');
-  indicator.style.width = tabEl.offsetWidth + 'px';
-  indicator.style.left = tabEl.offsetLeft + 'px';
-}
-document.querySelectorAll('.tab').forEach(t=>{
+/* ---------- bottom nav ---------- */
+document.querySelectorAll('.navtab').forEach(t=>{
   t.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.navtab').forEach(x=>x.classList.remove('active'));
     document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     document.getElementById('view-'+t.dataset.view).classList.add('active');
-    moveTabIndicator(t);
+    document.querySelector('main.content-scroll').scrollTop = 0;
   });
 });
 
@@ -784,6 +864,47 @@ document.querySelectorAll('.chip-btn').forEach(b=>{
     currentFilter = b.dataset.filter;
     rerender();
   });
+});
+
+/* ---------- reschedule / makeup classes ---------- */
+function populateExtraCourseSelect(){
+  const sel = document.getElementById('extraCourse');
+  sel.innerHTML = COURSE_META.map(c=> `<option value="${c.id}">${c.name} (${c.code})</option>`).join('');
+}
+function renderExtrasList(){
+  const el = document.getElementById('extrasList');
+  const courseById = {}; COURSE_META.forEach(c=> courseById[c.id]=c);
+  if(extras.length === 0){ el.innerHTML = ''; return; }
+  const sorted = [...extras].sort((a,b)=> a.date.localeCompare(b.date));
+  el.innerHTML = sorted.map(ex=>{
+    const c = courseById[ex.courseId];
+    return `
+      <div class="extra-row">
+        <div class="extra-info"><b>${c ? c.code : '?'}</b> · ${humanDate(ex.date)} · ${ex.type==='lab' ? 'Lab (2hr)' : 'Lecture'}</div>
+        <button class="extra-del" data-id="${ex.id}" title="Remove">✕</button>
+      </div>
+    `;
+  }).join('');
+  el.querySelectorAll('.extra-del').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      const id = btn.dataset.id;
+      extras = extras.filter(e=> String(e.id) !== id);
+      await saveExtras();
+      renderExtrasList();
+      rerender();
+    });
+  });
+}
+document.getElementById('addExtraBtn').addEventListener('click', async ()=>{
+  const courseId = document.getElementById('extraCourse').value;
+  const date = document.getElementById('extraDate').value;
+  const type = document.getElementById('extraType').value;
+  if(!date){ alert('Pick the date the makeup class is happening on.'); return; }
+  extras.push({ id: Date.now(), courseId, date, type });
+  await saveExtras();
+  document.getElementById('extraDate').value = '';
+  renderExtrasList();
+  rerender();
 });
 
 document.getElementById('resetBtn').addEventListener('click', async ()=>{

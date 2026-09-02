@@ -171,9 +171,17 @@
     border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);cursor:pointer;
   }
   .chip-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .chip-btn.quick-add{margin-left:auto;background:var(--gold);color:#241C3B;border-color:var(--gold);font-weight:700;}
+  .settings-card.highlight{animation:cardpulse 1.1s ease;}
+  @keyframes cardpulse{
+    0%{box-shadow:0 0 0 0 rgba(255,176,32,0.5);}
+    70%{box-shadow:0 0 0 10px rgba(255,176,32,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,176,32,0);}
+  }
 
   .date-group{margin-bottom:16px;}
   .date-heading{font-size:11.5px;font-weight:700;color:var(--ink-soft);margin:0 0 8px 2px;display:flex;align-items:center;gap:6px;}
+
   .date-heading.is-today{color:var(--accent);}
   .today-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
 
@@ -221,6 +229,11 @@
   .settings-card h3{font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:600;margin:0 0 4px;color:var(--ink);}
   .settings-card .sub{font-size:11.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 12px;}
   .reschedule-row{display:flex;gap:8px;margin-bottom:8px;}
+  .move-checkbox{
+    display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);
+    margin:2px 0 10px;cursor:pointer;line-height:1.4;
+  }
+  .move-checkbox input{width:16px;height:16px;flex-shrink:0;accent-color:var(--accent);}
   select{
     font-family:'Inter';font-size:13px;padding:10px 11px;border-radius:10px;
     border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;
@@ -262,6 +275,12 @@
   }
   input[type="number"]{-moz-appearance:textfield;}
   .name-field{margin-bottom:20px;}
+  .batch-toggle{display:flex;gap:8px;}
+  .batch-opt{
+    flex:1;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);
+    color:var(--ink-soft);font-family:'Inter';font-weight:600;font-size:13.5px;cursor:pointer;
+  }
+  .batch-opt.active{background:var(--accent);border-color:var(--accent);color:#fff;}
   .setup-course{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;}
   .setup-course-name{font-size:13px;font-weight:600;margin-bottom:9px;color:var(--ink);}
   .setup-course-name span{font-weight:400;color:var(--ink-soft);font-size:11px;display:block;margin-top:1px;}
@@ -309,7 +328,14 @@
 <div id="setupScreen">
   <div class="setup-head">
     <h1>Set up your Bunk Budget 🎉</h1>
-    <p>The timetable is fixed for Sem V, Batch B2 — MPSTME. Add your name and today's numbers from your attendance report, and you'll know exactly how many lectures you can guilt-free skip. Lectures run until <b>5 November 2026</b>.</p>
+    <p>The timetable covers Sem V, Batch 1 and Batch 2 — MPSTME. Pick your batch, add your name and today's numbers from your attendance report, and you'll know exactly how many lectures you can guilt-free skip. Lectures run until <b>5 November 2026</b>.</p>
+  </div>
+  <div class="name-field">
+    <div class="field-label">Your batch</div>
+    <div class="batch-toggle">
+      <button type="button" class="batch-opt" id="batchB1Btn" data-batch="B1">Batch 1</button>
+      <button type="button" class="batch-opt active" id="batchB2Btn" data-batch="B2">Batch 2</button>
+    </div>
   </div>
   <div class="upload-box" id="uploadBox">
     <div class="upload-icon">📄</div>
@@ -332,7 +358,7 @@
 
   <header class="top">
     <h1>Bunk Budget</h1>
-    <p><span id="greeting"></span> · Sem V CSE (Data Science), B2 · lectures run till <b>5 Nov 2026</b><br><span id="todayLine"></span></p>
+    <p><span id="greeting"></span> · Sem V CSE (Data Science), <span id="batchLabel">B2</span> · lectures run till <b>5 Nov 2026</b><br><span id="todayLine"></span></p>
     <div class="stat-deck">
       <div class="stat-card">
         <div class="n" id="daysLeft">–</div>
@@ -364,6 +390,7 @@
         <button class="chip-btn active" data-filter="unlogged">Needs logging</button>
         <button class="chip-btn" data-filter="upcoming">Upcoming</button>
         <button class="chip-btn" data-filter="all">All</button>
+        <button class="chip-btn quick-add" id="quickAddExtraBtn">+ Add class</button>
       </div>
       <div id="logList"></div>
     </div>
@@ -371,9 +398,12 @@
     <div class="view" id="view-settings">
       <button class="action-btn" id="editNumbersBtn">Update my attendance numbers</button>
 
-      <div class="settings-card">
-        <h3>Got a reschedule email? 📬</h3>
-        <p class="sub">Add the makeup class here — it'll show up in your Log with a "Rescheduled" tag and count toward that subject.</p>
+      <div class="settings-card" id="extraCard">
+        <h3>Extra or moved class? 📬</h3>
+        <p class="sub">
+          <b>Catching up / covering more ground?</b> Leave the box below unchecked — it genuinely adds to your count. This also covers a visiting faculty catching up on a backlog: just mark each skipped class as <b>Cancelled</b> in your Log when it happens, then add the catch-up session here as extra once it actually happens.<br><br>
+          <b>Same class, just shifted to a different time?</b> Check the box — it cancels that one original slot and swaps in the new time, so your total doesn't inflate.
+        </p>
         <div class="reschedule-row">
           <select id="extraCourse"></select>
         </div>
@@ -384,16 +414,28 @@
             <option value="lab">Lab (2hr)</option>
           </select>
         </div>
-        <button class="add-extra-btn" id="addExtraBtn">Add rescheduled class</button>
+        <label class="move-checkbox">
+          <input type="checkbox" id="isMovedCheckbox">
+          <span>This is the same class just moved to a new time (not extra)</span>
+        </label>
+        <div class="reschedule-row hidden" id="originalDateRow">
+          <div style="flex:1;">
+            <label class="field-label" style="margin-top:8px;">Original scheduled date</label>
+            <input type="date" id="originalDate">
+          </div>
+        </div>
+        <button class="add-extra-btn" id="addExtraBtn">Add class</button>
         <div class="extras-list" id="extrasList"></div>
       </div>
 
       <p class="note">
-        Weekly class counts per course were read off the Sem V timetable for Batch B2. 2-hour lab/practical blocks show as a single entry in the log but count as 2 classes toward attendance — holidays are pulled from the NMIMS 2026 calendar and academic schedule. Mid-term weeks (17–22 Aug, 7–12 Sep for management subjects, 5–10 Oct) aren't excluded — tests run inside the normal lecture slot, so regular classes still happen as scheduled around them. Term runs through <b>5 November 2026</b>.
+        Weekly class counts per course were read off the Sem V timetable for Batch 1 and Batch 2 (set under your name in setup). 2-hour lab/practical blocks show as a single entry in the log but count as 2 classes toward attendance — holidays are pulled from the NMIMS 2026 calendar and academic schedule. Mid-term weeks (17–22 Aug, 7–12 Sep for management subjects, 5–10 Oct) aren't excluded — tests run inside the normal lecture slot, so regular classes still happen as scheduled around them. Term runs through <b>5 November 2026</b>.<br><br>
+        <b>Heads up:</b> the schedule above is currently set back to a direct read of the original timetable document, since some recent tweaks got the timings out of sync. If a day or batch split looks wrong, let me know exactly what should change and I'll fix it precisely rather than guess.
       </p>
       <button class="reset-btn" id="resetBtn">Reset all logged classes</button>
     </div>
   </main>
+
 
   <nav class="bottom-nav">
     <button class="navtab active" data-view="courses">
@@ -417,16 +459,37 @@
 <script>
 /* ---------- Course timetable (shared, Batch B2) ---------- */
 /* Each slot is one weekly class period. type 'lab' = 2-hour block: shown as ONE log entry but worth 2 classes. */
+/* Each course has 'common' slots (identical for Batch 1 and Batch 2) plus one lab slot
+   per batch in 'batchLab' where the timetable splits into parallel batch sessions. */
 const COURSE_META = [
-  { id:'ml',    name:'Machine Learning',                         code:'ML',    slots:[{day:1,type:'lecture'},{day:4,type:'lecture'},{day:3,type:'lab'}] },
-  { id:'dw',    name:'Data Wrangling',                            code:'DW',    slots:[{day:1,type:'lab'},{day:1,type:'lecture'},{day:2,type:'lecture'}] },
-  { id:'dc',    name:'Design for Consumers',                      code:'DC',    slots:[{day:2,type:'lecture'},{day:2,type:'lab'}] },
-  { id:'pom',   name:'Principles of Management',                  code:'POM',   slots:[{day:1,type:'lecture'},{day:4,type:'lecture'},{day:4,type:'lecture'}] },
-  { id:'mm',    name:'Marketing Management',                      code:'MM',    slots:[{day:1,type:'lecture'},{day:3,type:'lecture'},{day:4,type:'lecture'}] },
-  { id:'abapr', name:'Adv. Business Analytics in Python & R',     code:'ABAPR', slots:[{day:2,type:'lecture'},{day:4,type:'lab'},{day:4,type:'lecture'}] },
-  { id:'amba',  name:'Advanced Modelling for Business Analytics', code:'AMBA',  slots:[{day:6,type:'lab'},{day:6,type:'lecture'}] },
+  { id:'ml',    name:'Machine Learning',                         code:'ML',
+    common:[{type:'lecture',day:1,time:'13:00',room:'CR-604'},{type:'lecture',day:4,time:'14:00',room:'CR-604'}],
+    batchLab:{ B1:{type:'lab',day:1,time:'12:00',room:'CL-803'}, B2:{type:'lab',day:3,time:'10:00',room:'CL-501'} } },
+  { id:'dw',    name:'Data Wrangling',                            code:'DW',
+    common:[{type:'lecture',day:1,time:'14:00',room:'CR-702'},{type:'lecture',day:2,time:'12:00',room:'CR-702'}],
+    batchLab:{ B1:{type:'lab',day:4,time:'08:00',room:'CR-702'}, B2:{type:'lab',day:1,time:'12:00',room:'CR-702'} } },
+  { id:'dc',    name:'Design for Consumers',                      code:'DC',
+    common:[{type:'lecture',day:2,time:'10:00',room:'CR-604'},{type:'lecture',day:3,time:'12:00',room:'CR-604'}],
+    batchLab:{ B1:{type:'lab',day:2,time:'13:00',room:'CL-803'}, B2:{type:'lab',day:3,time:'13:00',room:'CL-601'} } },
+  { id:'pom',   name:'Principles of Management',                  code:'POM',
+    common:[{type:'lecture',day:1,time:'09:00',room:'CR-403'},{type:'lecture',day:4,time:'10:00',room:'CR-604'},{type:'lecture',day:4,time:'12:00',room:'CR-401'}],
+    batchLab:null },
+  { id:'mm',    name:'Marketing Management',                      code:'MM',
+    common:[{type:'lecture',day:1,time:'10:00',room:'CR-604'},{type:'lecture',day:3,time:'11:00',room:'CR-604'},{type:'lecture',day:4,time:'13:00',room:'CR-604'}],
+    batchLab:null },
+  { id:'abapr', name:'Adv. Business Analytics in Python & R',     code:'ABAPR',
+    common:[{type:'lecture',day:2,time:'09:00',room:'CR-504'},{type:'lecture',day:4,time:'09:00',room:'CR-406'}],
+    batchLab:{ B1:{type:'lab',day:2,time:'08:00',room:'HLESL'}, B2:{type:'lab',day:4,time:'08:00',room:'CL-701'} } },
+  { id:'amba',  name:'Advanced Modelling for Business Analytics', code:'AMBA',
+    common:[{type:'lecture',day:6,time:'10:00',room:'CR-604'},{type:'lecture',day:6,time:'11:00',room:'CR-604'}],
+    batchLab:{ B1:{type:'lab',day:6,time:'12:00',room:'CL-401'}, B2:{type:'lab',day:6,time:'09:00',room:'CL-401'} } },
 ];
 function weightOf(type){ return type==='lab' ? 2 : 1; }
+function slotsForCourse(c, batch){
+  const slots = [...c.common];
+  if(c.batchLab && c.batchLab[batch]) slots.push(c.batchLab[batch]);
+  return slots;
+}
 
 const START_DATE = '2026-08-30';
 const END_DATE   = '2026-11-05';
@@ -497,10 +560,12 @@ function generateSessions(){
     const dateStr = isoLocal(cur);
     const dow = cur.getDay();
     if(!HARD_HOLIDAYS.includes(dateStr)){
+      const batch = (profile && profile.batch) || 'B2';
       COURSE_META.forEach(c=>{
-        c.slots.forEach((slot, slotIdx)=>{
+        const slots = slotsForCourse(c, batch);
+        slots.forEach((slot, slotIdx)=>{
           if(slot.day === dow){
-            sessions.push({date:dateStr, courseId:c.id, slotIdx, type:slot.type, weight:weightOf(slot.type)});
+            sessions.push({date:dateStr, courseId:c.id, slotIdx, type:slot.type, weight:weightOf(slot.type), time:slot.time, room:slot.room});
           }
         });
       });
@@ -508,7 +573,7 @@ function generateSessions(){
     cur.setDate(cur.getDate()+1);
   }
   extras.forEach(ex=>{
-    sessions.push({date:ex.date, courseId:ex.courseId, slotIdx:'extra-'+ex.id, type:ex.type, weight:weightOf(ex.type), isExtra:true});
+    sessions.push({date:ex.date, courseId:ex.courseId, slotIdx:'extra-'+ex.id, type:ex.type, weight:weightOf(ex.type), isExtra:true, isMoved:!!ex.isMoved, time:'23:59'});
   });
   return sessions;
 }
@@ -632,7 +697,7 @@ function renderLog(sessions){
   }
   const courseById = {}; COURSE_META.forEach(c=> courseById[c.id]=c);
   el.innerHTML = dates.map(date=>{
-    const rows = groups[date].sort((a,b)=> a.courseId.localeCompare(b.courseId));
+    const rows = groups[date].sort((a,b)=> (a.time||'99:99').localeCompare(b.time||'99:99'));
     const isToday = date===todayStr;
     return `
       <div class="date-group">
@@ -641,7 +706,7 @@ function renderLog(sessions){
           const c = courseById[s.courseId];
           const st = log[sessKey(s)] || '';
           const labBadge = s.type==='lab' ? '<span class="lab-badge">Lab · 2 classes</span>' : '';
-          const makeupBadge = s.isExtra ? '<span class="makeup-badge">Rescheduled</span>' : '';
+          const makeupBadge = s.isExtra ? `<span class="makeup-badge">${s.isMoved ? 'Moved' : 'Extra class'}</span>` : '';
           return `
             <div class="sess-row">
               <div class="sess-course">${c.code} ${labBadge} ${makeupBadge}<small>${c.name}</small></div>
@@ -677,6 +742,7 @@ function renderSummary(sessions, stats){
   const start = toDate(TERM_START);
   const daysLeft = Math.max(0, Math.ceil((end - today) / 86400000));
   document.getElementById('greeting').textContent = profile.name ? `Hi ${profile.name.split(' ')[0]}` : 'Hi';
+  document.getElementById('batchLabel').textContent = (profile.batch || 'B2');
   document.getElementById('todayLine').textContent = today.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long' });
   document.getElementById('daysLeft').textContent = daysLeft;
   const remainingTotal = stats.reduce((sum,c)=> sum + c.remaining, 0);
@@ -725,10 +791,20 @@ function renderSetupCourses(prefill){
   }).join('');
 }
 
+let selectedBatch = 'B2';
+function setBatchUI(batch){
+  selectedBatch = batch;
+  document.getElementById('batchB1Btn').classList.toggle('active', batch==='B1');
+  document.getElementById('batchB2Btn').classList.toggle('active', batch==='B2');
+}
+document.getElementById('batchB1Btn').addEventListener('click', ()=> setBatchUI('B1'));
+document.getElementById('batchB2Btn').addEventListener('click', ()=> setBatchUI('B2'));
+
 function showSetup(prefillProfile){
   document.getElementById('mainApp').classList.add('hidden');
   document.getElementById('setupScreen').classList.remove('hidden');
   document.getElementById('setupName').value = (prefillProfile && prefillProfile.name) || '';
+  setBatchUI((prefillProfile && prefillProfile.batch) || 'B2');
   renderSetupCourses(prefillProfile && prefillProfile.base);
 }
 
@@ -840,26 +916,25 @@ document.getElementById('setupSave').addEventListener('click', async ()=>{
     const attended = parseInt(document.getElementById(`c_${c.id}_attended`).value, 10) || 0;
     base[c.id] = { conducted, attended };
   });
-  profile = { name, base };
+  profile = { name, batch: selectedBatch, base };
   await saveProfile();
   showMainApp();
 });
 document.getElementById('editNumbersBtn').addEventListener('click', ()=>{ showSetup(profile); });
 
 /* ---------- bottom nav ---------- */
+function goToNavView(viewName){
+  document.querySelectorAll('.navtab').forEach(x=>x.classList.toggle('active', x.dataset.view===viewName));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active', x.id==='view-'+viewName));
+  document.querySelector('main.content-scroll').scrollTop = 0;
+}
 document.querySelectorAll('.navtab').forEach(t=>{
-  t.addEventListener('click', ()=>{
-    document.querySelectorAll('.navtab').forEach(x=>x.classList.remove('active'));
-    document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
-    t.classList.add('active');
-    document.getElementById('view-'+t.dataset.view).classList.add('active');
-    document.querySelector('main.content-scroll').scrollTop = 0;
-  });
+  t.addEventListener('click', ()=> goToNavView(t.dataset.view));
 });
 
-document.querySelectorAll('.chip-btn').forEach(b=>{
+document.querySelectorAll('.chip-btn:not(.quick-add)').forEach(b=>{
   b.addEventListener('click', ()=>{
-    document.querySelectorAll('.chip-btn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.chip-btn:not(.quick-add)').forEach(x=>x.classList.remove('active'));
     b.classList.add('active');
     currentFilter = b.dataset.filter;
     rerender();
@@ -895,16 +970,48 @@ function renderExtrasList(){
     });
   });
 }
+document.getElementById('isMovedCheckbox').addEventListener('change', (e)=>{
+  document.getElementById('originalDateRow').classList.toggle('hidden', !e.target.checked);
+});
+
 document.getElementById('addExtraBtn').addEventListener('click', async ()=>{
   const courseId = document.getElementById('extraCourse').value;
   const date = document.getElementById('extraDate').value;
   const type = document.getElementById('extraType').value;
-  if(!date){ alert('Pick the date the makeup class is happening on.'); return; }
-  extras.push({ id: Date.now(), courseId, date, type });
+  const isMoved = document.getElementById('isMovedCheckbox').checked;
+  const originalDate = document.getElementById('originalDate').value;
+  if(!date){ alert('Pick the date the class is actually happening on.'); return; }
+  if(isMoved && !originalDate){ alert('Pick the date it was originally scheduled for, so I can cancel that slot.'); return; }
+
+  if(isMoved){
+    const allSessions = generateSessions();
+    const matches = allSessions.filter(s=> s.courseId===courseId && s.date===originalDate && !s.isExtra);
+    if(matches.length === 0){
+      alert("That subject doesn't have a regular class on the original date you picked — double-check the date, or leave the box unchecked if this is a genuinely extra session.");
+      return;
+    }
+    matches.forEach(s=>{ log[sessKey(s)] = 'cancelled'; });
+    await saveLog();
+  }
+
+  extras.push({ id: Date.now(), courseId, date, type, isMoved });
   await saveExtras();
   document.getElementById('extraDate').value = '';
+  document.getElementById('originalDate').value = '';
+  document.getElementById('isMovedCheckbox').checked = false;
+  document.getElementById('originalDateRow').classList.add('hidden');
   renderExtrasList();
   rerender();
+});
+
+document.getElementById('quickAddExtraBtn').addEventListener('click', ()=>{
+  goToNavView('settings');
+  const card = document.getElementById('extraCard');
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+  card.classList.remove('highlight');
+  void card.offsetWidth;
+  card.classList.add('highlight');
+  document.getElementById('extraCourse').focus();
 });
 
 document.getElementById('resetBtn').addEventListener('click', async ()=>{
